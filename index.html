@@ -1,37 +1,1108 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>반갑습니다 | 이종화입니다.</title>
-<meta name="description" content="">
-<meta name="author" content="이종화 Jong hwa LEE">
-<meta property="og:url" content="https://jonghwalee.github.io/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="">
-<meta property="og:title" content="">
-<meta property="og:description" content="">
-<meta property="og:image" content="">
-<meta property="og:locale" content="ko_KR">
-<meta name="twitter:card" content="summary_large_image">
-<meta property="fb:app_id" content="127116027879734">
-<script type="application/ld+json">
-    {
-    "@context": "http://schema.org",
-    "@type": "WebPage",
-    "headline": "",
-    "description": "",
-    "url": ""https://jonghwalee.github.io/"
-    "image": "",
-    "publisher": {
-      "@type": "Organization",
-      "logo": {"@type": "ImageObject", "url": ""}
-      },
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio | Project Developer</title>
+  <meta name="description" content="경력 요약, 기술 스택, 프로젝트 참여 이력을 정리한 포트폴리오입니다.">
+  <meta property="og:url" content="https://jonghwalee.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Portfolio">
+  <meta property="og:title" content="Portfolio | Project Developer">
+  <meta property="og:description" content="경력 요약과 기술 스택을 담은 포트폴리오">
+  <meta property="og:locale" content="ko_KR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f8f7;
+      --bg-strong: #f1f3f1;
+      --card: #ffffff;
+      --text: #222624;
+      --muted: #626a66;
+      --line: #dfe4e1;
+      --point: #2f3632;
+      --point-soft: #f1f3f1;
+      --shadow: 0 8px 24px rgba(35, 40, 37, 0.06);
+      --radius: 8px;
+      --font: "Noto Sans KR", sans-serif;
     }
-  </script>
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 28px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 0;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .brand strong {
+      font-size: 1.06rem;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .brand span,
+    .nav a,
+    .subtext,
+    .card p,
+    .footer-note {
+      color: var(--muted);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      font-size: 0.95rem;
+    }
+
+    .nav a {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .nav a + a::before {
+      content: "|";
+      margin: 0 12px;
+      color: var(--line);
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      color: var(--point);
+    }
+
+    main {
+      padding: 18px 0 64px;
+    }
+
+    .hero {
+      padding: 28px 0 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid rgba(219, 234, 224, 0.95);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .card {
+      padding: 32px;
+    }
+
+    .hero-main {
+      max-width: 860px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 10px 0 12px;
+      font-size: 2.05rem;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      margin: 0;
+      line-height: 1.8;
+      font-size: 1rem;
+      color: var(--muted);
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      font-size: 0.92rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #fff;
+      font-weight: 700;
+    }
+
+    .button.primary {
+      background: var(--text);
+      border-color: var(--text);
+      color: #fff;
+    }
+
+    section {
+      margin-top: 20px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      letter-spacing: 0;
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .summary-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .advanced-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      margin: 0;
+      line-height: 1.8;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--line);
+      font-size: 0.92rem;
+    }
+
+    .field-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .project-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .participation-detail {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.7fr) 1.3fr;
+      gap: 18px;
+      align-items: start;
+      margin-top: 14px;
+    }
+
+    .role-list {
+      margin-top: 0;
+    }
+
+    .detail-title {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: minmax(140px, 0.38fr) 1fr;
+      gap: 12px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .project strong {
+      font-size: 0.94rem;
+    }
+
+    .project span {
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 14px;
+      padding-left: 22px;
+    }
+
+    .sort-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .sort-button {
+      min-height: 38px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--muted);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .sort-button[aria-pressed="true"] {
+      background: var(--text);
+      border-color: var(--text);
+      color: #fff;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      bottom: 10px;
+      left: 5px;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(47, 54, 50, 0.36), rgba(47, 54, 50, 0.08));
+    }
+
+    .timeline-item {
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      top: 25px;
+      left: -22px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--point);
+      box-shadow: 0 0 0 6px var(--point-soft);
+    }
+
+    .period {
+      display: inline-flex;
+      margin-bottom: 10px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: var(--point-soft);
+      color: var(--point);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .card ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    footer {
+      padding: 0 0 44px;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 900px) {
+      .summary-grid,
+      .advanced-grid,
+      .skill-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner,
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(100% - 20px, 1120px);
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      .actions,
+      .meta-row {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .timeline {
+        padding-left: 18px;
+      }
+
+      .timeline-item::before {
+        left: -20px;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      .project {
+        grid-template-columns: 1fr;
+      }
+
+      .participation-detail {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-	
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top">
+        <strong>Portfolio</strong>
+        <span>Project Developer</span>
+      </a>
+      <nav class="nav" aria-label="주요 섹션">
+        <a href="#intro">소개</a>
+        <a href="#summary">경력 요약</a>
+        <a href="#skills">기술</a>
+        <a href="#fields">프로젝트 분야</a>
+        <a href="#solutions">솔루션</a>
+        <a href="#participation">참여 이력</a>
+        <a href="#project-names">프로젝트명</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap">
+      <section class="hero" id="intro">
+        <article class="hero-main">
+          <span class="eyebrow">Platform / SI / Web Service</span>
+          <h1>프로젝트 구축과 운영 흐름을 이해하는 개발자</h1>
+          <p class="lead">
+            플랫폼 구축, 시스템 통합, 웹 서비스 개발을 중심으로 일해 왔습니다.
+            Java와 Spring 기반 개발을 주축으로 ASP.NET, C#, PHP, Node.js, React, Vue 웹 개발까지 다뤄 왔으며,
+            요구사항 분석, 설계, 구현, 운영 대응까지
+            프로젝트 전 과정에서 필요한 역할을 수행했습니다. 책임감 있게 일을 마무리하고,
+            필요한 기술을 빠르게 응용하며 고객과 신뢰를 쌓는 방식으로 일합니다.
+            확장 가능한 플랫폼 구조를 설계하고 운영 가능한 형태로 구체화하는 일을 좋아합니다.
+          </p>
+          <div class="meta-row">
+            <span class="chip">플랫폼 / SI / 웹 서비스</span>
+            <span class="chip">분석 · 설계 · 개발</span>
+            <span class="chip">기술 기반 PL/PM 수행</span>
+          </div>
+          <div class="actions">
+            <a class="button primary" href="#participation">참여 이력 보기</a>
+            <a class="button" href="https://github.com/JONGHWALEE" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </article>
+      </section>
+
+      <section id="summary">
+        <div class="section-head">
+          <h2>경력 요약</h2>
+          <p class="subtext">분석, 설계, 개발을 중심으로 수행한 업무 범위입니다.</p>
+        </div>
+        <div class="grid summary-grid">
+          <article class="panel card">
+            <h3>책임감</h3>
+            <p>맡은 범위는 끝까지 확인하고, 요구사항 분석부터 설계, 구현, 운영 대응까지 프로젝트 흐름을 놓치지 않으려 합니다.</p>
+          </article>
+          <article class="panel card">
+            <h3>기술 선도와 응용</h3>
+            <p>새로운 기술을 빠르게 검토하고, 확장 가능한 플랫폼 설계에 맞게 현실적으로 응용하는 데 익숙합니다.</p>
+          </article>
+          <article class="panel card">
+            <h3>고객 신뢰</h3>
+            <p>고객과 직접 협의하며 문제를 정리하고 설명하는 역할을 많이 맡았습니다. 협업 과정에서 신뢰를 얻는 편입니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="section-head">
+          <h2>기술</h2>
+          <p class="subtext">프로젝트 수행 과정에서 다뤄 온 심화 역량과 기술 범위입니다.</p>
+        </div>
+        <div class="grid advanced-grid">
+          <article class="panel card">
+            <h3>Architecture / Scale</h3>
+            <div class="tags">
+              <span class="tag">시스템 아키텍처 설계</span>
+              <span class="tag">서비스 아키텍처 설계</span>
+              <span class="tag">플랫폼 아키텍처</span>
+              <span class="tag">MSA 설계 경험</span>
+              <span class="tag">대용량 데이터 처리</span>
+              <span class="tag">대규모 데이터 이관</span>
+              <span class="tag">데이터 이관 아키텍처</span>
+              <span class="tag">이기종 DB 연계 아키텍처</span>
+              <span class="tag">레거시 현대화</span>
+              <span class="tag">시스템 고도화</span>
+              <span class="tag">운영 안정화</span>
+            </div>
+          </article>
+          <article class="panel card">
+            <h3>Server / Reliability</h3>
+            <div class="tags">
+              <span class="tag">서버 클러스터 구성</span>
+              <span class="tag">WAS 클러스터링</span>
+              <span class="tag">고가용성 구성</span>
+              <span class="tag">이중화 구성</span>
+              <span class="tag">로드밸런싱</span>
+              <span class="tag">세션 클러스터링</span>
+              <span class="tag">Kubernetes 경험</span>
+              <span class="tag">무중단 배포 검토</span>
+              <span class="tag">장애 대응 체계</span>
+              <span class="tag">운영 로그 분석</span>
+            </div>
+          </article>
+          <article class="panel card">
+            <h3>Performance / Data</h3>
+            <div class="tags">
+              <span class="tag">SQL 튜닝</span>
+              <span class="tag">인덱스 설계</span>
+              <span class="tag">쿼리 최적화</span>
+              <span class="tag">배치 성능 개선</span>
+              <span class="tag">데이터 정합성 검증</span>
+              <span class="tag">다중 DB 정합성 관리</span>
+              <span class="tag">ETL 설계</span>
+              <span class="tag">마이그레이션 전략</span>
+              <span class="tag">대량 처리 검증</span>
+              <span class="tag">운영 데이터 분석</span>
+            </div>
+          </article>
+          <article class="panel card">
+            <h3>Integration / Delivery</h3>
+            <div class="tags">
+              <span class="tag">시스템 통합 설계</span>
+              <span class="tag">API 연계 아키텍처</span>
+              <span class="tag">OpenAPI 설계</span>
+              <span class="tag">외부 시스템 연계</span>
+              <span class="tag">공공데이터 연계</span>
+              <span class="tag">요구사항 정리</span>
+              <span class="tag">기술 협의</span>
+              <span class="tag">운영 전환</span>
+              <span class="tag">고객 커뮤니케이션</span>
+            </div>
+          </article>
+        </div>
+        <div class="skill-grid">
+          <article class="panel card">
+            <h3>Language / Backend</h3>
+            <div class="tags">
+              <span class="tag">Java</span>
+              <span class="tag">C#</span>
+              <span class="tag">PHP</span>
+              <span class="tag">Python</span>
+              <span class="tag">R</span>
+              <span class="tag">MATLAB</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Express</span>
+              <span class="tag">Flask</span>
+              <span class="tag">Spring Framework</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">전자정부프레임워크</span>
+              <span class="tag">JSP</span>
+              <span class="tag">JSTL</span>
+              <span class="tag">Servlet</span>
+              <span class="tag">MyBatis</span>
+              <span class="tag">JPA</span>
+              <span class="tag">Hibernate</span>
+              <span class="tag">REST API</span>
+              <span class="tag">Batch</span>
+              <span class="tag">대용량 배치</span>
+              <span class="tag">ASP.NET</span>
+              <span class="tag">ASP.NET MVC</span>
+              <span class="tag">.NET Framework</span>
+            </div>
+          </article>
+          <article class="panel card">
+            <h3>Frontend</h3>
+            <div class="tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Vue</span>
+              <span class="tag">Vue.js</span>
+              <span class="tag">React</span>
+              <span class="tag">SPA</span>
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">jQuery</span>
+              <span class="tag">Freemarker</span>
+              <span class="tag">FreeMarker Template</span>
+              <span class="tag">반응형 UI</span>
+              <span class="tag">웹접근성 인증 대응</span>
+              <span class="tag">웹접근성 인증마크 획득</span>
+              <span class="tag">관리자 화면</span>
+              <span class="tag">운영 화면 개선</span>
+            </div>
+          </article>
+          <article class="panel card">
+            <h3>Desktop / Application</h3>
+            <div class="tags">
+              <span class="tag">일반 App 개발</span>
+              <span class="tag">Windows App</span>
+              <span class="tag">JavaFX</span>
+              <span class="tag">Swing</span>
+              <span class="tag">C# WinForms</span>
+              <span class="tag">WPF</span>
+              <span class="tag">ASP.NET Web App</span>
+              <span class="tag">업무용 클라이언트</span>
+              <span class="tag">관리 도구 개발</span>
+            </div>
+          </article>
+          <article class="panel card">
+            <h3>Database</h3>
+            <div class="tags">
+              <span class="tag">Oracle</span>
+              <span class="tag">MariaDB</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">MSSQL</span>
+              <span class="tag">Tibero</span>
+              <span class="tag">CUBRID</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">NoSQL</span>
+              <span class="tag">Redis</span>
+              <span class="tag">Multi-DB</span>
+              <span class="tag">이종DB 통합환경</span>
+              <span class="tag">이기종 DB 연계</span>
+              <span class="tag">SQL 튜닝</span>
+              <span class="tag">데이터 모델링</span>
+              <span class="tag">마이그레이션</span>
+              <span class="tag">이기종 DB 마이그레이션</span>
+              <span class="tag">대규모 데이터 이관</span>
+              <span class="tag">ETL</span>
+              <span class="tag">데이터 정합성 검증</span>
+              <span class="tag">스키마 설계</span>
+              <span class="tag">인덱스 설계</span>
+              <span class="tag">쿼리 최적화</span>
+              <span class="tag">성능 튜닝</span>
+              <span class="tag">프로시저</span>
+            </div>
+          </article>
+          <article class="panel card">
+            <h3>Server / Middleware</h3>
+            <div class="tags">
+              <span class="tag">Linux</span>
+              <span class="tag">Linux 서버 운영</span>
+              <span class="tag">Linux 환경 구성</span>
+              <span class="tag">Shell Script</span>
+              <span class="tag">systemd 서비스 관리</span>
+              <span class="tag">권한 / 계정 관리</span>
+              <span class="tag">프로세스 관리</span>
+              <span class="tag">포트 / 네트워크 점검</span>
+              <span class="tag">로그 분석</span>
+              <span class="tag">crontab</span>
+              <span class="tag">Windows Server</span>
+              <span class="tag">Apache</span>
+              <span class="tag">Tomcat</span>
+              <span class="tag">JEUS</span>
+              <span class="tag">JBoss</span>
+              <span class="tag">Nginx</span>
+              <span class="tag">IIS</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Kubernetes</span>
+              <span class="tag">MSA 운영 경험</span>
+              <span class="tag">WAS 클러스터</span>
+              <span class="tag">서버 이중화</span>
+              <span class="tag">로드밸런싱</span>
+              <span class="tag">고가용성 구성</span>
+              <span class="tag">세션 클러스터링</span>
+              <span class="tag">배포 환경 구성</span>
+              <span class="tag">운영 로그 분석</span>
+              <span class="tag">성능 점검</span>
+              <span class="tag">장애 대응</span>
+            </div>
+          </article>
+          <article class="panel card">
+            <h3>Project / Integration</h3>
+            <div class="tags">
+              <span class="tag">요구사항 분석</span>
+              <span class="tag">아키텍처 설계</span>
+              <span class="tag">데이터 이관 아키텍처</span>
+              <span class="tag">시스템 아키텍처</span>
+              <span class="tag">서비스 설계</span>
+              <span class="tag">시스템 통합</span>
+              <span class="tag">OpenAPI</span>
+              <span class="tag">API 설계</span>
+              <span class="tag">실시간 데이터 수집 API</span>
+              <span class="tag">외부 연계</span>
+              <span class="tag">공공데이터 연계</span>
+              <span class="tag">DRM 연계</span>
+              <span class="tag">CMS</span>
+              <span class="tag">ERP</span>
+              <span class="tag">GIS</span>
+              <span class="tag">GIS Polygon</span>
+              <span class="tag">공간 데이터 처리</span>
+              <span class="tag">예약 시스템</span>
+              <span class="tag">통계 시스템</span>
+              <span class="tag">원격검침 시스템</span>
+              <span class="tag">데이터 수집 플랫폼</span>
+              <span class="tag">홈페이지 통합관리</span>
+              <span class="tag">레거시 분석</span>
+              <span class="tag">고도화</span>
+              <span class="tag">유지보수</span>
+            </div>
+          </article>
+          <article class="panel card">
+            <h3>Tools / Collaboration</h3>
+            <div class="tags">
+              <span class="tag">Git</span>
+              <span class="tag">SVN</span>
+              <span class="tag">Maven</span>
+              <span class="tag">Gradle</span>
+              <span class="tag">Eclipse</span>
+              <span class="tag">IntelliJ IDEA</span>
+              <span class="tag">Visual Studio</span>
+              <span class="tag">VS Code</span>
+              <span class="tag">Postman</span>
+              <span class="tag">ERD</span>
+              <span class="tag">기술 문서화</span>
+              <span class="tag">고객 협의</span>
+              <span class="tag">분석 / 설계 / 개발</span>
+              <span class="tag">기술 기반 PL / PM</span>
+            </div>
+          </article>
+          <article class="panel card">
+            <h3>AI / LLM Solution</h3>
+            <div class="tags">
+              <span class="tag">LLM 환경 구성</span>
+              <span class="tag">Ollama</span>
+              <span class="tag">Local LLM</span>
+              <span class="tag">LLM Serving</span>
+              <span class="tag">RAG</span>
+              <span class="tag">Embedding</span>
+              <span class="tag">LLM API 연동</span>
+              <span class="tag">OpenAI API</span>
+              <span class="tag">Claude API</span>
+              <span class="tag">API 기반 자동화</span>
+              <span class="tag">AI 솔루션 설계</span>
+              <span class="tag">업무 자동화 솔루션</span>
+              <span class="tag">사내 지식 검색</span>
+              <span class="tag">문서 기반 질의응답</span>
+              <span class="tag">프롬프트 설계</span>
+              <span class="tag">GPT</span>
+              <span class="tag">Claude</span>
+              <span class="tag">Gemini</span>
+              <span class="tag">Grok</span>
+              <span class="tag">Qwen</span>
+              <span class="tag">AI Coding Workflow</span>
+              <span class="tag">문서화 보조</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="fields">
+        <div class="section-head">
+          <h2>프로젝트 분야</h2>
+          <p class="subtext">사업과 도메인 관점에서 주로 수행한 프로젝트 영역입니다.</p>
+        </div>
+        <article class="panel card">
+          <div class="field-box">
+            <span class="tag">플랫폼 구축</span>
+            <span class="tag">시스템 통합(SI)</span>
+            <span class="tag">정보시스템 구축</span>
+            <span class="tag">시스템 고도화</span>
+            <span class="tag">공공데이터 서비스</span>
+            <span class="tag">대민 서비스</span>
+            <span class="tag">업무 포털</span>
+            <span class="tag">데이터 연계 사업</span>
+            <span class="tag">대규모 데이터 이관</span>
+            <span class="tag">운영 안정화</span>
+            <span class="tag">레거시 현대화</span>
+            <span class="tag">AI 업무 자동화</span>
+          </div>
+        </article>
+      </section>
+
+      <section id="solutions">
+        <div class="section-head">
+          <h2>솔루션 경험</h2>
+          <p class="subtext">구축 경험과 업무 구조 이해를 바탕으로 구현 가능한 솔루션 유형입니다.</p>
+        </div>
+        <article class="panel card">
+          <div class="field-box">
+            <span class="tag">WMS</span>
+            <span class="tag">물류 / 창고관리 시스템</span>
+            <span class="tag">CRM</span>
+            <span class="tag">고객관리 시스템</span>
+            <span class="tag">CMS</span>
+            <span class="tag">PMS</span>
+            <span class="tag">프로젝트 관리 시스템</span>
+            <span class="tag">ERP</span>
+            <span class="tag">Groupware</span>
+            <span class="tag">그룹웨어</span>
+            <span class="tag">업무관리 시스템</span>
+            <span class="tag">통합관리 시스템</span>
+            <span class="tag">예약관리 시스템</span>
+            <span class="tag">통계관리 시스템</span>
+            <span class="tag">데이터 수집 시스템</span>
+            <span class="tag">OpenAPI 플랫폼</span>
+            <span class="tag">공공데이터 포털</span>
+            <span class="tag">GIS 기반 시스템</span>
+            <span class="tag">GIS 폴리곤 데이터</span>
+            <span class="tag">홈페이지 통합관리</span>
+            <span class="tag">웹접근성 인증마크 획득</span>
+            <span class="tag">관리자 콘솔</span>
+            <span class="tag">운영 관리 도구</span>
+            <span class="tag">시스템 연계 모듈</span>
+            <span class="tag">데이터 이관 도구</span>
+            <span class="tag">AI 업무 자동화 솔루션</span>
+          </div>
+        </article>
+      </section>
+
+      <section id="participation">
+        <div class="section-head">
+          <div>
+            <h2>참여 이력</h2>
+            <p class="subtext">역할과 프로젝트 성격 중심으로 정리했습니다.</p>
+          </div>
+          <div class="sort-controls" aria-label="참여 이력 정렬">
+            <button class="sort-button" type="button" data-sort="desc" aria-pressed="true">최근부터 보기</button>
+            <button class="sort-button" type="button" data-sort="asc" aria-pressed="false">초기부터 보기</button>
+          </div>
+        </div>
+        <div class="timeline" data-participation-list>
+          <article class="timeline-item panel card" data-order="4">
+            <span class="period">최근</span>
+            <h3>운영성과 개발 생산성을 함께 고려하는 방식으로 확장</h3>
+            <p>
+              시스템을 오래 운영할 수 있는 구조와 개발 효율을 함께 고려하며, 필요한 도구와 기술을 실무에 적용하고 있습니다.
+            </p>
+            <div class="participation-detail">
+              <div>
+                <strong class="detail-title">주요 수행 역량</strong>
+                <ul class="role-list">
+                  <li>Java, 전자정부프레임워크 기반 통합관리시스템 개발</li>
+                  <li>Linux, Tomcat, Nginx 등 서버 환경 대응</li>
+                  <li>원격검침 데이터 수집 API, 통합관리시스템, 로컬 LLM 대시보드 구현</li>
+                  <li>LLM 환경 구성과 문서 기반 질의응답, 업무 자동화 솔루션 구현</li>
+                </ul>
+              </div>
+              <div>
+                <strong class="detail-title">프로젝트 성격</strong>
+                <div class="project-list" aria-label="프로젝트 성격">
+                  <div class="project">
+                    <strong>공공</strong>
+                    <span>공공 업무 시스템 구축 및 운영 가능한 통합관리 체계 구현</span>
+                  </div>
+                  <div class="project">
+                    <strong>데이터 수집</strong>
+                    <span>실시간 데이터 수집 API와 다중 DB 기반 데이터 처리 흐름 구축</span>
+                  </div>
+                  <div class="project">
+                    <strong>보안 연계</strong>
+                    <span>DRM 적용 환경과 운영 인프라를 고려한 시스템 연계 구현</span>
+                  </div>
+                  <div class="project">
+                    <strong>AI</strong>
+                    <span>로컬 LLM 환경 구성과 업무 대시보드, 문서 기반 자동화 기능 구현</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item panel card" data-order="3">
+            <span class="period">중견 경력</span>
+            <h3>분석, 설계, 개발 중심의 실무 수행</h3>
+            <p>
+              요구사항 분석과 설계, 개발 실무를 중심으로 수행하고 기술 판단이 필요한 PL/PM 성격의 조율 업무도 맡았습니다.
+            </p>
+            <div class="participation-detail">
+              <div>
+                <strong class="detail-title">주요 수행 역량</strong>
+                <ul class="role-list">
+                  <li>요구사항 분석과 화면·기능 설계</li>
+                  <li>백엔드, 프론트엔드, 데이터베이스 전 영역 개발</li>
+                  <li>고객 협의, 운영 이슈 대응, 유지보수성 개선</li>
+                </ul>
+              </div>
+              <div>
+                <strong class="detail-title">프로젝트 성격</strong>
+                <div class="project-list" aria-label="프로젝트 성격">
+                  <div class="project">
+                    <strong>업무 시스템</strong>
+                    <span>요구사항 분석, 화면 설계, 백엔드/프론트엔드 개발까지 전 과정 수행</span>
+                  </div>
+                  <div class="project">
+                    <strong>CRM</strong>
+                    <span>고객관리, 주문관리, 운영관리 등 업무 흐름 중심의 시스템 구축</span>
+                  </div>
+                  <div class="project">
+                    <strong>운영 대응</strong>
+                    <span>고객 협의, 기능 개선, 장애 대응, 유지보수성 개선 중심의 운영 지원</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item panel card" data-order="2">
+            <span class="period">확장기</span>
+            <h3>플랫폼 구축과 시스템 통합 프로젝트 수행</h3>
+            <p>
+              플랫폼 구축, 시스템 통합, 기존 시스템 고도화 프로젝트를 수행하며 서비스 구조와 연계 흐름을 다뤘습니다.
+            </p>
+            <div class="participation-detail">
+              <div>
+                <strong class="detail-title">주요 수행 역량</strong>
+                <ul class="role-list">
+                  <li>전자정부프레임워크, Spring Framework 기반 프로젝트 수행</li>
+                  <li>CMS, GIS, OpenAPI, 공공데이터 연계 경험</li>
+                  <li>기존 시스템 분석과 기능 개선</li>
+                  <li>웹접근성 인증마크 획득 대응 경험</li>
+                </ul>
+              </div>
+              <div>
+                <strong class="detail-title">프로젝트 성격</strong>
+                <div class="project-list" aria-label="프로젝트 성격">
+                  <div class="project">
+                    <strong>플랫폼</strong>
+                    <span>플랫폼 구축 및 통합관리 체계 고도화</span>
+                  </div>
+                  <div class="project">
+                    <strong>공공데이터</strong>
+                    <span>공공데이터 연계 및 OpenAPI 제공 시스템 구축</span>
+                  </div>
+                  <div class="project">
+                    <strong>GIS</strong>
+                    <span>위치기반 정보시스템 구축과 공간 데이터 처리</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item panel card" data-order="1">
+            <span class="period">초기 경력</span>
+            <h3>웹 개발과 업무 시스템 구축 경험 축적</h3>
+            <p>
+              웹 애플리케이션 개발과 업무 시스템 구축을 중심으로 화면, 백엔드, 데이터 처리 흐름을 폭넓게 경험했습니다.
+            </p>
+            <div class="participation-detail">
+              <div>
+                <strong class="detail-title">주요 수행 역량</strong>
+                <ul class="role-list">
+                  <li>웹 서비스 개발 기본기와 업무 시스템 구조 이해</li>
+                  <li>JSP, Servlet, Java 기반 개발 경험</li>
+                  <li>PMS 및 그룹웨어 구축 경험</li>
+                  <li>데이터베이스 연동과 운영 환경 대응</li>
+                </ul>
+              </div>
+              <div>
+                <strong class="detail-title">프로젝트 성격</strong>
+                <div class="project-list" aria-label="프로젝트 성격">
+                  <div class="project">
+                    <strong>웹 서비스</strong>
+                    <span>JSP, Servlet, Java 기반 웹 서비스 개발과 운영 환경 대응</span>
+                  </div>
+                  <div class="project">
+                    <strong>업무관리</strong>
+                    <span>PMS 및 그룹웨어 기반 업무관리 시스템 구축</span>
+                  </div>
+                  <div class="project">
+                    <strong>ERP</strong>
+                    <span>ASP.NET 기반 ERP의 창고관리, 인사, 회계 모듈과 데이터베이스 연동 구조 구현</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="project-names">
+        <div class="section-head">
+          <h2>실제 참여 프로젝트</h2>
+          <p class="subtext">프로젝트명만 빠르게 확인할 수 있도록 별도로 정리했습니다.</p>
+        </div>
+        <article class="panel card">
+          <div class="project-list" aria-label="실제 참여 프로젝트명">
+            <div class="project"><strong>공공</strong><span>상수사업본부 지능형 원격검침 통합관리시스템 구축</span></div>
+            <div class="project"><strong>교육</strong><span>경기도 구리남양주, 파주, 가평, 연천, 포천, 광명 교육지원청 및 학교 홈페이지 통합 개편</span></div>
+            <div class="project"><strong>교육</strong><span>대구학생예술창작터 예약 및 대여시스템 고도화 구축</span></div>
+            <div class="project"><strong>교육</strong><span>보살핌늘봄서비스 고도화, 부산 고교학점제 지원센터 플랫폼 구축</span></div>
+            <div class="project"><strong>공공</strong><span>영상물등급위원회 대표홈페이지 구축 및 등급관리시스템 연계</span></div>
+            <div class="project"><strong>대학</strong><span>동의대학교/창원대학교/경상국립대학교/서울교육대학교/국립해양대학교 CMS 고도화 및 관리</span></div>
+            <div class="project"><strong>교육청</strong><span>부산교육청 행정통합/예약 CMS 고도화 및 관리</span></div>
+            <div class="project"><strong>교육청</strong><span>경남교육청 행정통합/예약 CMS 고도화 및 관리</span></div>
+            <div class="project"><strong>농업</strong><span>한우관리시스템 기능 개선 및 관리</span></div>
+            <div class="project"><strong>대학</strong><span>창신대학교 학사 지원시스템 개발</span></div>
+            <div class="project"><strong>기업</strong><span>제조사 고객 주문시스템 재구축</span></div>
+            <div class="project"><strong>기업</strong><span>고객관리 시스템 관리</span></div>
+            <div class="project"><strong>쇼핑몰</strong><span>식품 쇼핑몰 홈페이지 관리</span></div>
+            <div class="project"><strong>웹</strong><span>이케다 다이사쿠 홈페이지 구축</span></div>
+            <div class="project"><strong>공공</strong><span>은행연합회 고객지원용 홈페이지 구축</span></div>
+            <div class="project"><strong>공공</strong><span>한국영상자료원 홈페이지 개선</span></div>
+            <div class="project"><strong>공공</strong><span>에너지정보 소통센터 홈페이지 리뉴얼 및 관리</span></div>
+            <div class="project"><strong>CMS</strong><span>평화공원 홈페이지 구축 및 관리</span></div>
+            <div class="project"><strong>CMS</strong><span>CMS 개발구축</span></div>
+            <div class="project"><strong>CMS</strong><span>VMSMozart 홈페이지 개선 및 관리</span></div>
+            <div class="project"><strong>공공</strong><span>조사원 과학기지 홈페이지 구축</span></div>
+            <div class="project"><strong>GIS</strong><span>첨단 해양산업 오픈랜 구축 및 실감형 융합 콘텐츠 개발 3차년도</span></div>
+            <div class="project"><strong>GIS</strong><span>어업맞춤형 해양 기상 콘텐츠 고도화 및 서비스 개발 2차년도</span></div>
+            <div class="project"><strong>GIS</strong><span>해양 GIS 솔루션을 활용한 어선모니터링시스템 현지화</span></div>
+            <div class="project"><strong>해양</strong><span>해양수치모델 표출 시스템 구축</span></div>
+            <div class="project"><strong>공공</strong><span>국가수산방역 통합정보망 구축 및 관리</span></div>
+            <div class="project"><strong>교육</strong><span>교육 예약시스템 고도화 개선구축</span></div>
+            <div class="project"><strong>해양</strong><span>종합해양정보 시스템 고도화 구축 및 관리</span></div>
+            <div class="project"><strong>해양</strong><span>해기사 시험 집행 체계 구축 및 관리</span></div>
+            <div class="project"><strong>해양</strong><span>해기사 양성과정 홈페이지 구축 및 관리</span></div>
+            <div class="project"><strong>해양</strong><span>해양플랜트 교육용 홈페이지 구축 및 관리</span></div>
+            <div class="project"><strong>공공</strong><span>개인정보보호체계 구축 및 관리</span></div>
+            <div class="project"><strong>회계</strong><span>국제회계기준 IFRS 도입 구축 및 관리</span></div>
+            <div class="project"><strong>항만</strong><span>여수, 부산, 울산, 제주해양관리단 홈페이지 고도화 및 관리</span></div>
+            <div class="project"><strong>항만</strong><span>여수, 부산, 울산 항만공사 홈페이지 고도화 및 관리</span></div>
+            <div class="project"><strong>항만</strong><span>울산항만공사 해상교통안전 시스템 구축</span></div>
+            <div class="project"><strong>AIS</strong><span>부산항 지능형 영상관제 AIS 분배 구축</span></div>
+            <div class="project"><strong>AIS</strong><span>경인운하 아라뱃길 AIS 모니터링 구축 및 관리</span></div>
+            <div class="project"><strong>관제</strong><span>여수항 VHF-DSC 모니터링, 통제시스템 구축 및 관리</span></div>
+            <div class="project"><strong>관제</strong><span>대산항 VHF-DSC 모니터링, 통제시스템 구축 및 관리</span></div>
+            <div class="project"><strong>관제</strong><span>인천항만공사 항만모니터링 구축 및 관리</span></div>
+            <div class="project"><strong>관제</strong><span>울산항 AIS 기반 CCTV 시스템 구축 및 관리</span></div>
+            <div class="project"><strong>업무</strong><span>제조업 입찰시스템 구축</span></div>
+            <div class="project"><strong>관제</strong><span>통합관제 시스템 구축, 고도화 및 관리</span></div>
+            <div class="project"><strong>해양</strong><span>해상교통관제센터 홈페이지 구축</span></div>
+            <div class="project"><strong>운영</strong><span>유지보수 지원시스템 구축 및 관리</span></div>
+            <div class="project"><strong>uCity</strong><span>uCity(USN) 해운대 구축 및 관리</span></div>
+            <div class="project"><strong>그룹웨어</strong><span>사내 그룹웨어 및 프로젝트 관리 시스템 구축</span></div>
+            <div class="project"><strong>WMS / ERP</strong><span>ASP.NET 기반 ERP 구축 및 관리(창고관리, 인사, 회계)</span></div>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p class="footer-note">Portfolio</p>
+    </div>
+  </footer>
+  <script>
+    const participationList = document.querySelector("[data-participation-list]");
+    const sortButtons = document.querySelectorAll("[data-sort]");
+
+    sortButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const direction = button.dataset.sort;
+        const items = Array.from(participationList.querySelectorAll("[data-order]"));
+
+        items
+          .sort((a, b) => {
+            const left = Number(a.dataset.order);
+            const right = Number(b.dataset.order);
+            return direction === "asc" ? left - right : right - left;
+          })
+          .forEach((item) => participationList.appendChild(item));
+
+        sortButtons.forEach((item) => {
+          item.setAttribute("aria-pressed", String(item === button));
+        });
+      });
+    });
+  </script>
 </body>
 </html>
