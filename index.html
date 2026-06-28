@@ -135,7 +135,7 @@
     }
 
     .hero-main {
-      max-width: 860px;
+      max-width: none;
     }
 
     .eyebrow {
@@ -158,6 +158,7 @@
       line-height: 1.8;
       font-size: 1rem;
       color: var(--muted);
+      text-wrap: pretty;
     }
 
     .meta-row {
@@ -420,6 +421,27 @@
         width: min(100% - 20px, 1120px);
       }
 
+      .nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+        gap: 8px;
+        font-size: 0.88rem;
+      }
+
+      .nav a {
+        justify-content: center;
+        min-height: 38px;
+        padding: 0 10px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.72);
+      }
+
+      .nav a + a::before {
+        content: none;
+      }
+
       .card {
         padding: 24px;
       }
@@ -450,6 +472,12 @@
       }
 
       .participation-detail {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .nav {
         grid-template-columns: 1fr;
       }
     }
@@ -491,7 +519,7 @@
           <div class="meta-row">
             <span class="chip">플랫폼 / SI / 웹 서비스</span>
             <span class="chip">분석 · 설계 · 개발</span>
-            <span class="chip">기술 기반 PL/PM 수행</span>
+            <span class="chip">분석 · 설계 · 개발 · PL/PM 지원</span>
           </div>
           <div class="actions">
             <a class="button primary" href="#participation">참여 이력 보기</a>
@@ -700,6 +728,9 @@
               <span class="tag">로그 분석</span>
               <span class="tag">crontab</span>
               <span class="tag">Windows Server</span>
+              <span class="tag">AWS</span>
+              <span class="tag">Cloud 환경 구성</span>
+              <span class="tag">클라우드 서버 운영</span>
               <span class="tag">Apache</span>
               <span class="tag">Tomcat</span>
               <span class="tag">JEUS</span>
@@ -766,7 +797,7 @@
               <span class="tag">기술 문서화</span>
               <span class="tag">고객 협의</span>
               <span class="tag">분석 / 설계 / 개발</span>
-              <span class="tag">기술 기반 PL / PM</span>
+              <span class="tag">분석 / 설계 / 개발 / PL·PM 지원</span>
             </div>
           </article>
           <article class="panel card">
@@ -882,7 +913,7 @@
                 <strong class="detail-title">주요 수행 역량</strong>
                 <ul class="role-list">
                   <li>Java, 전자정부프레임워크 기반 통합관리시스템 개발</li>
-                  <li>Linux, Tomcat, Nginx 등 서버 환경 대응</li>
+                  <li>Linux, Tomcat, Nginx, AWS 등 서버 및 클라우드 환경 대응</li>
                   <li>원격검침 데이터 수집 API, 통합관리시스템, 로컬 LLM 대시보드 구현</li>
                   <li>LLM 환경 구성과 문서 기반 질의응답, 업무 자동화 솔루션 구현</li>
                 </ul>
@@ -900,7 +931,7 @@
                   </div>
                   <div class="project">
                     <strong>보안 연계</strong>
-                    <span>DRM 적용 환경과 운영 인프라를 고려한 시스템 연계 구현</span>
+                    <span>DRM 적용 환경과 클라우드/운영 인프라를 고려한 시스템 연계 구현</span>
                   </div>
                   <div class="project">
                     <strong>AI</strong>
@@ -915,7 +946,7 @@
             <span class="period">중견 경력</span>
             <h3>분석, 설계, 개발 중심의 실무 수행</h3>
             <p>
-              요구사항 분석과 설계, 개발 실무를 중심으로 수행하고 기술 판단이 필요한 PL/PM 성격의 조율 업무도 맡았습니다.
+              요구사항 분석과 설계, 개발 실무를 중심으로 수행하고 필요한 범위에서 PL/PM 성격의 조율 업무도 맡았습니다.
             </p>
             <div class="participation-detail">
               <div>
